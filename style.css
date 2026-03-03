@@ -328,7 +328,7 @@ h2 em { font-style: italic; color: var(--accent); }
   margin-right: calc(50% - 50vw);
   background:
     linear-gradient(rgba(245, 241, 235, 0), rgba(245, 241, 235, 0)),
-    url('../images/nature.avif') center 72%/cover no-repeat;
+    url('images/sthescope.png') center 72%/cover no-repeat;
   border: 1px solid var(--line);
 }
 .sum-cards {
@@ -528,7 +528,7 @@ h2 em { font-style: italic; color: var(--accent); }
   padding-top: 84px;
 }
 .categories-hero {
-  --categories-bg: url('../code/images/happypatient.png');
+  --categories-bg: url('images/happypatient.png');
   width: 100vw;
   margin: 0 0 1rem;
   margin-left: calc(50% - 50vw);
