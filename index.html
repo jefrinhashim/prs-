@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GeneSkin — Genetic Skin Report</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+
+
+<!-- ── FRONT PAGE INFO STRIP ── -->
+
+
+<!-- ── NAV ── -->
+<nav>
+  <a href="#" class="nav-logo" onclick="showPage('dashboard'); return false;">Polygenic <span>RiskScore</span></a>
+  <ul class="nav-links">
+  
+    
+    <li><a href="#" onclick="showPage('comparison'); return false;">categories</a></li>
+    
+    <li><a href="#" onclick="showPage('dashboard'); setTimeout(()=>document.getElementById('contact-anchor').scrollIntoView({behavior:'smooth'}),300); return false;">Contact</a></li>
+  </ul>
+  <div style="display:flex; align-items:center; gap:1rem;">
+    <button id="back-btn" class="btn-outline" style="display:none; font-size:0.78rem; padding:0.5rem 1.2rem;"></button>
+    <button class="btn-outline" type="button" onclick="window.location.href='login.html';" style="font-size:0.78rem; padding:0.5rem 1.2rem;">Login</button>   
+    
+  </div>
+  <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobile-menu">
+  <a href="#" onclick="closeMobileMenu(); showPage('dashboard'); return false;">Dashboard</a>
+  <a href="#" onclick="closeMobileMenu(); showPage('allergies'); return false;">Allergies</a>
+  <a href="#" onclick="closeMobileMenu(); showPage('dashboard'); setTimeout(()=>document.getElementById('services-anchor').scrollIntoView({behavior:'smooth'}),300); return false;">Categories</a>
+  <a href="#" onclick="closeMobileMenu(); showPage('comparison'); return false;">Risk Analysis</a>
+  <a href="#" onclick="closeMobileMenu(); showPage('dashboard'); setTimeout(()=>document.getElementById('contact-anchor').scrollIntoView({behavior:'smooth'}),300); return false;">Contact</a>
+  <div class="mobile-menu-cta">
+    <button class="nav-cta" style="width:100%; padding:1rem;" onclick="closeMobileMenu(); showPage('comparison');">View Report</button>
+    <button class="btn-outline" style="width:100%; padding:1rem; color:var(--dark); border-color:var(--dark);" onclick="window.location.href='login.html';">Login</button>
+  </div>
+</div>
+
+<!-- ══════════════ DASHBOARD PAGE ══════════════ -->
+ 
+<div id="pg-dashboard" class="page-section">
+
+  <!-- ── HERO ── -->
+  <section class="hero" style="padding:0;">
+    <img src="../code/images/patient.webp" class="patientpic" alt="Patient consultation" />
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-tag">Genetic Analysis Report</div>
+      <h1>Your Genetic<br/><em>Skin Profile</em></h1>
+      <p class="hero-desc">Comprehensive analysis of 37 traits and conditions across skin health, dermatological diseases, aesthetics, and allergies. Personalised insights from your DNA.</p>
+    
+    </div>
+    
+  </section>
+
+  <!-- ── STATS STRIP ── -->
+    <div class="stats-strip">
+      <div class="stat-item stat-tagline">
+      <div class="stat-num">Excellence </div>
+      <div class="stat-label">Built Over Time</div>
+      </div>
+    <div class="stat-item stat-tagline">
+      <div class="stat-num">Where Customers Come First</div>
+    
+    </div>
+    <div class="stat-item stat-tagline">
+      <div class="stat-num">7+</div>
+      <div class="stat-label">years of experience</div>
+    </div>     
+  </div>
+
+ 
+  <!-- ── ABOUT / PRS ── -->
+  <section class="about" id="about-anchor">
+    <div class="about-inner reveal">
+      <div class="about-img-wrap">
+    <img src="/output/code/images/hosiptalin.jpg" class="hosiptalin">
+      </div>
+      <div class="about-content">
+        <span class="section-tag">About Your Report</span>
+        <h2>Science of <em>Skin & Genetics</em></h2>
+        <p>GeneSkin uses Polygenic Risk Score (PRS) methodology to evaluate your genetic predisposition across 37 skin-related traits. PRS aggregates the cumulative effect of many genetic variants to produce a personalised risk estimate.</p>
+        <p>Each trait's score is calculated using validated GWAS (Genome-Wide Association Study) data, then compared to population reference panels to give you a meaningful, contextualised result.</p>
+        <div class="credentials">
+          <div class="credential">Powered by validated GWAS reference data</div>
+          <div class="credential">Compared against 4 major population panels</div>
+          <div class="credential">37 traits across 4 major categories</div>
+          <div class="credential">For informational purposes only — consult a clinician</div>
+        </div>
+        <button class="btn-primary" onclick="showPage('comparison')">View Full Analysis</button>
+      </div>
+    </div>
+  </section>
+
+ 
+
+
+  <!-- ── BOOKING ── -->
+  <div class="booking" id="booking-anchor">
+    <div class="booking-left reveal">
+      <span class="section-tag">Consultation</span>
+      <h2>Ready to <em>Understand</em> Your Results?</h2>
+      <p>Book a consultation with a genetic counsellor or dermatologist to discuss your personalised skin report. Same-day appointments often available.</p>
+      <button class="btn-light">Call Us: 000 000</button>
+    </div>
+    <div class="booking-form reveal">
+      <h3>Book Your Consultation</h3>
+      <div class="form-row">
+        <div class="form-group">
+          <label>First Name</label>
+          <input type="text" placeholder="First name" />
+        </div>
+        <div class="form-group">
+          <label>Last Name</label>
+          <input type="text" placeholder="Last name" />
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" placeholder="you@email.com" />
+        </div>
+        <div class="form-group">
+          <label>Phone Number</label>
+          <input type="tel" placeholder="+1 000 000 0000" />
+        </div>
+        <div class="form-group full">
+          <label>Area of Interest</label>
+          <select>
+            <option>Select a category...</option>
+            <option>Allergies</option>
+            <option>Dermatological Diseases</option>
+            <option>Skin Aesthetics</option>
+            <option>Skin Health Markers</option>
+            <option>Full Report Review</option>
+          </select>
+        </div>
+        <div class="form-group full">
+          <label>Additional Notes</label>
+          <input type="text" placeholder="Any specific concerns from your report..." />
+        </div>
+        <button class="submit-btn" type="button">Request Consultation →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── TESTIMONIALS ── -->
+  <section class="testimonials">
+    <div class="test-head reveal">
+      <span class="section-tag">Patient Stories</span>
+      <h2>Trusted by <em>Thousands</em></h2>
+    </div>
+    <div class="testimonials-grid reveal">
+      <div class="test-card">
+        <div class="test-stars">★★★★★</div>
+        <p class="test-text">"My GeneSkin report helped me finally understand why my skin reacts so intensely to certain environments. The recommendations were practical and the science was clear."</p>
+        <div class="test-author">
+          <div class="test-avatar">MJ</div>
+          <div>
+            <div class="test-name">Michael Johnson</div>
+            <div class="test-role">GeneSkin patient since 2023</div>
+          </div>
+        </div>
+      </div>
+      <div class="test-card">
+        <div class="test-stars">★★★★★</div>
+        <p class="test-text">"Understanding my genetic predispositions for dermatological conditions has completely changed my skincare approach. I now work with my dermatologist much more effectively."</p>
+        <div class="test-author">
+          <div class="test-avatar">SL</div>
+          <div>
+            <div class="test-name">Sarah Lee</div>
+            <div class="test-role">GeneSkin patient since 2022</div>
+          </div>
+        </div>
+      </div>
+      <div class="test-card">
+        <div class="test-stars">★★★★★</div>
+        <p class="test-text">"The ancestry comparison was fascinating — seeing how my risk profile compares to different populations helped me understand the science behind my results so much better."</p>
+        <div class="test-author">
+          <div class="test-avatar">RK</div>
+          <div>
+            <div class="test-name">Robert Kim</div>
+            <div class="test-role">GeneSkin patient since 2021</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── TEAM ── -->
+  <section class="team" id="team-anchor">
+    <div class="team-head reveal">
+      <div>
+        <span class="section-tag">Our Specialists</span>
+        <h2>Meet the <em>Team</em></h2>
+      </div>
+      <button class="btn-outline" style="color:var(--dark); border-color:var(--dark);">View All Staff</button>
+    </div>
+    <div class="team-grid reveal">
+      <div class="team-card">
+        <div class="team-photo">
+          <svg viewBox="0 0 100 130" xmlns="http://www.w3.org/2000/svg" width="60%">
+            <circle cx="50" cy="38" r="28" fill="rgba(255,255,255,0.18)"/>
+            <ellipse cx="50" cy="110" rx="38" ry="42" fill="rgba(255,255,255,0.12)"/>
+          </svg>
+        </div>
+        <div class="team-overlay">
+          <div class="team-social">in</div>
+          <div class="team-social">✉</div>
+          <div class="team-social">🔗</div>
+        </div>
+        <div class="team-info">
+          <div class="team-name">Dr. </div>
+          <div class="team-specialty">Genetic Dermatology</div>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-photo" style="background: linear-gradient(150deg,#c5b8a8 0%,#6b5a3e 100%);">
+          <svg viewBox="0 0 100 130" xmlns="http://www.w3.org/2000/svg" width="60%">
+            <circle cx="50" cy="38" r="28" fill="rgba(255,255,255,0.18)"/>
+            <ellipse cx="50" cy="110" rx="38" ry="42" fill="rgba(255,255,255,0.12)"/>
+          </svg>
+        </div>
+        <div class="team-overlay">
+          <div class="team-social">in</div>
+          <div class="team-social">✉</div>
+          <div class="team-social">🔗</div>
+        </div>
+        <div class="team-info">
+          <div class="team-name">Dr.</div>
+          <div class="team-specialty">Immunology</div>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-photo" style="background: linear-gradient(150deg,#b8c5c0 0%,#3e5a52 100%);">
+          <svg viewBox="0 0 100 130" xmlns="http://www.w3.org/2000/svg" width="60%">
+            <circle cx="50" cy="38" r="28" fill="rgba(255,255,255,0.18)"/>
+            <ellipse cx="50" cy="110" rx="38" ry="42" fill="rgba(255,255,255,0.12)"/>
+          </svg>
+        </div>
+        <div class="team-overlay">
+          <div class="team-social">in</div>
+          <div class="team-social">✉</div>
+          <div class="team-social">🔗</div>
+        </div>
+        <div class="team-info">
+          <div class="team-name">Dr. </div>
+          <div class="team-specialty">Genetic Counselling</div>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-photo" style="background: linear-gradient(150deg,#c5c0b8 0%,#5a523e 100%);">
+          <svg viewBox="0 0 100 130" xmlns="http://www.w3.org/2000/svg" width="60%">
+            <circle cx="50" cy="38" r="28" fill="rgba(255,255,255,0.18)"/>
+            <ellipse cx="50" cy="110" rx="38" ry="42" fill="rgba(255,255,255,0.12)"/>
+          </svg>
+        </div>
+        <div class="team-overlay">
+          <div class="team-social">in</div>
+          <div class="team-social">✉</div>
+          <div class="team-social">🔗</div>
+        </div>
+        <div class="team-info">
+          <div class="team-name">Dr. </div>
+          <div class="team-specialty">Allergology</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer id="contact-anchor">
+    <div class="foot-brand">
+      <a href="#" class="nav-logo" onclick="showPage('dashboard'); return false;">Gene<span>Skin</span></a>
+      <p>Personalised genetic skin health reports powered by validated GWAS science. Understanding your DNA to help you care for your skin.</p>
+      
+    </div>
+    <div class="foot-col">
+      <h4>Report Categories</h4>
+      <ul>
+        <li><a href="#" onclick="showPage('allergies'); return false;">Allergies</a></li>
+        <li><a href="#" onclick="showPage('comparison'); return false;">Dermatological Diseases</a></li>
+        <li><a href="#" onclick="showPage('comparison'); return false;">Skin Aesthetics</a></li>
+        <li><a href="#" onclick="showPage('comparison'); return false;">Skin Health Markers</a></li>
+        <li><a href="#" onclick="showPage('comparison'); return false;">Risk Comparison</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <h4>About</h4>
+      <ul>
+        <li><a href="#">About GeneSkin</a></li>
+        <li><a href="#">Our Science</a></li>
+        <li><a href="#">Meet the Team</a></li>
+        <li><a href="#">Patient Portal</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="#">1420 Wellness Blvd, Suite 3</a></li>
+        <li><a href="#">San Francisco, CA 94103</a></li>
+        <li><a href="#">info@geneskin.com</a></li>
+        <li><a href="#">Mon–Fri: 8am – 6pm</a></li>
+      </ul>
+    </div>
+    <div class="foot-bottom">
+      <p>© 2026 GeneSkin &nbsp;·&nbsp; ID: P00007901EC &nbsp;·&nbsp; For informational purposes only. Not a substitute for professional medical advice.</p>
+      <div class="foot-socials">
+        <div class="foot-social">in</div>
+        <div class="foot-social">f</div>
+        <div class="foot-social">ig</div>
+        <div class="foot-social">✉</div>
+      </div>
+    </div>
+  </footer>
+
+</div><!-- end pg-dashboard -->
+
+<!-- ══════════════ ALLERGIES PAGE ══════════════ -->
+<div id="pg-allergies" class="page-section">
+
+  <section class="allergies-section" id="overview">
+    <div class="allergy-head reveal">
+      <div>
+        <span class="section-tag"></span>
+        <h2> <em>Allergies</em></h2>
+       
+        <p style="font-size:0.95rem; font-weight:300; color:var(--cream); margin-top:1rem; max-width:580px; line-height:1.75;">Analysis of immune responses, sensitivities, and allergic reactions based on your genetic variants.</p>
+      </div>
+    </div>
+    <div class="traits-layout reveal">
+      <div class="jump-menu-container">
+        <div class="jump-menu-header">On this page</div>
+        <ul class="jump-menu-list">
+          <li class="active"><a href="#overview">Overview</a></li>
+          <li><a href="#eczema">Eczema</a></li>
+          <li><a href="#hives">Environmental Trigger Responses</a></li>
+          <li><a href="#contact-dermatitis">General Allergic Sensitivity</a></li>
+          <li><a href="#faqs">FAQs</a></li>
+        </ul>
+      </div>
+
+      <div class="traits-list">
+      <div class="trait-row vh" id="hives" onclick="showPage('trait-detail')">
+        <div class="rbadge b-vh">Very High</div>
+        <div>
+          <div class="tname">Itch intensity from mosquito bite</div>
+          <div class="tdesc">The intensity of mosquito bite itching refers to the body's reaction to the mosquito's saliva, which can range from mild to intense. This indicates how the immune system responds to allergens.</div>
+        </div>
+        <div class="tarrow">→</div>
+      </div>
+      <div class="trait-row md" id="contact-dermatitis">
+        <div class="rbadge b-md">Medium</div>
+        <div>
+          <div class="tname">Allergic diseases (asthma, allergic rhinitis, or eczema)</div>
+          <div class="tdesc">Reactions of the body to substances that are normally harmless, causing symptoms such as difficulty breathing, sneezing, or skin irritation. They affect quality of life.</div>
+        </div>
+        <div class="tarrow">→</div>
+      </div>
+      <div class="trait-row md">
+        <div class="rbadge b-md">Medium</div>
+        <div>
+          <div class="tname">Allergic sensitivity</div>
+          <div class="tdesc">The body's reaction to substances that are normally harmless, such as pollen or food, causing symptoms like itching, swelling, and difficulty breathing.</div>
+        </div>
+        <div class="tarrow">→</div>
+      </div>
+      <div class="trait-row md" id="eczema">
+        <div class="rbadge b-md">Medium</div>
+        <div>
+          <div class="tname">Eczema and allergies</div>
+          <div class="tdesc">Skin reactions that occur due to sensitivities to substances, causing itching, redness, and inflammation. Important for understanding body reactions to allergens and irritants.</div>
+        </div>
+        <div class="tarrow">→</div>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Allergies footer -->
+  <div id="faqs"></div>
+  <footer id="contact-anchor-allergies">
+    <div class="foot-brand">
+      <a href="#" class="nav-logo" onclick="showPage('dashboard'); return false;">Gene<span>Skin</span></a>
+      <p>Personalised genetic skin health reports. ID: P00007901EC · July 24, 2026</p>
+    </div>
+    <div class="foot-col">
+      <h4>Report Sections</h4>
+      <ul>
+        <li><a href="#" onclick="showPage('dashboard'); return false;">Dashboard</a></li>
+        <li><a href="#" onclick="showPage('comparison'); return false;">Risk Analysis</a></li>
+      </ul>
+    </div>
+    <div class="foot-col"><h4></h4><ul></ul></div>
+    <div class="foot-col"><h4></h4><ul></ul></div>
+    <div class="foot-bottom">
+      <p>© 2026 GeneSkin &nbsp;·&nbsp; For informational purposes only.</p>
+      <div class="foot-socials">
+        <div class="foot-social">in</div>
+        <div class="foot-social">✉</div>
+      </div>
+    </div>
+  </footer>
+
+</div><!-- end pg-allergies -->
+
+
+<!-- ══════════════ TRAIT DETAIL PAGE ══════════════ -->
+<div id="pg-trait-detail" class="page-section">
+
+  <section class="detail-section">
+    <div class="reveal">
+      <span class="section-tag">Trait Detail</span>
+      <h2 class="detail-title">Itch intensity from mosquito bite</h2>
+      <p class="detail-sub">The intensity of mosquito bite itching refers to the body's reaction to the mosquito's saliva, which can range from mild to intense. This characteristic is important because it indicates how the immune system responds to allergens.</p>
+      <div class="risk-pill">⚠ Very High Risk</div>
+    </div>
+
+    <div class="detail-inner">
+      <div class="reveal">
+        <div class="card">
+          <div class="card-title"><span>💡</span> Clinical Recommendations</div>
+          <div class="recs">
+            <div class="rec">The phenotype of 'mosquito bite itch intensity' with a risk level of 'Very High' indicates that you experience a significantly stronger reaction to mosquito bites compared to most people. This heightened sensitivity can lead to more intense itching and discomfort when bitten, which may be bothersome and could affect your quality of life.</div>
+            <div class="rec">To manage this condition, consider using topical anti-itch creams or antihistamines to alleviate symptoms when you do get bitten. Additionally, taking preventive measures such as using insect repellent, wearing protective clothing, and avoiding areas with high mosquito activity can help reduce the likelihood of bites. If the itching becomes severe or persistent, consulting a healthcare professional for further advice may be beneficial.</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-title"><span>🧬</span> Genetic Variants</div>
+          <p style="color:var(--light);font-size:0.85rem;font-weight:300;margin-bottom:1.2rem;">The following genetic variants are associated with this phenotype, listed in descending order of their impact on your Polygenic Risk Score:</p>
+          <div style="overflow-x:auto;">
+            <table class="gtable">
+              <thead><tr><th>Chromosome</th><th>Position</th><th>Ref / Effect Alleles</th><th>Your Genotype</th><th>Gene</th></tr></thead>
+              <tbody>
+                <tr><td>22</td><td>37251028</td><td>C / T</td><td>CC</td><td><span class="gbadge">RAC2</span></td></tr>
+                <tr><td>11</td><td>81190800</td><td>A / C</td><td>AA</td><td><span class="gbadge">near COX6A1P4</span></td></tr>
+                <tr><td>2</td><td>47971006</td><td>C / T</td><td>CC</td><td><span class="gbadge">near VN1R18P</span></td></tr>
+                <tr><td>2</td><td>48191180</td><td>A / G</td><td>AA</td><td><span class="gbadge">near RN7SKP224</span></td></tr>
+                <tr><td>4</td><td>122806140</td><td>G / T</td><td>GG</td><td><span class="gbadge">near FGF2</span></td></tr>
+                <tr><td>1</td><td>152206676</td><td>C / T</td><td>CC</td><td><span class="gbadge">CCDST</span></td></tr>
+                <tr><td>3</td><td>106156699</td><td>A / C</td><td>AA</td><td><span class="gbadge">near CBLB</span></td></tr>
+                <tr><td>13</td><td>67122540</td><td>C / T</td><td>CC</td><td><span class="gbadge">PCDH9</span></td></tr>
+                <tr><td>4</td><td>122690387</td><td>G / T</td><td>TT</td><td><span class="gbadge">near IL21-AS1</span></td></tr>
+                <tr><td>5</td><td>132295159</td><td>A / C</td><td>CA</td><td><span class="gbadge">P4HA2, SLC22A4</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-title"><span>📚</span> Research Reference</div>
+          <div class="res-block">
+            <div class="res-ttl">GWAS of self-reported mosquito bite size, itch intensity and attractiveness to mosquitoes implicates immune-related predisposition loci</div>
+            <div class="res-doi">DOI: 10.1093/hmg/ddx036</div>
+            <p class="res-body">This study investigates how people react to mosquito bites, focusing on the intensity of itching, the size of the reaction, and attractiveness to mosquitoes. Information from over 84,000 individuals was analyzed, resulting in the identification of 15 significant genetic associations. These associations are linked to genes related to the immune system, which play an important role in the body's response to bites.</p>
+            <a href="https://www.ebi.ac.uk/gwas/studies/GCST004861" class="res-link" target="_blank">View full study →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal">
+        <div class="pop-card">
+          <div class="pop-title">Population Comparison</div>
+          <p class="pop-sub">Your genetic risk compared to different populations:</p>
+          <div class="pop-bars">
+            <div class="pop-row"><div class="pop-lbl">You</div><div class="pop-track"><div class="pop-fill you" style="width:92%">92%</div></div></div>
+            <div class="pop-row"><div class="pop-lbl">European</div><div class="pop-track"><div class="pop-fill" style="width:68%">68%</div></div></div>
+            <div class="pop-row"><div class="pop-lbl">East Asian</div><div class="pop-track"><div class="pop-fill" style="width:72%">72%</div></div></div>
+            <div class="pop-row"><div class="pop-lbl">African</div><div class="pop-track"><div class="pop-fill" style="width:65%">65%</div></div></div>
+            <div class="pop-row"><div class="pop-lbl">South Asian</div><div class="pop-track"><div class="pop-fill" style="width:70%">70%</div></div></div>
+          </div>
+        </div>
+
+        <div class="insight">
+          <strong>💡 Key Insight</strong><br/><br/>
+          Your genetic profile shows very high susceptibility to mosquito bite reactions. The genes involved (particularly RAC2) are associated with immune system function, explaining the heightened inflammatory response to mosquito saliva.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="foot-brand">
+      <a href="#" class="nav-logo" onclick="showPage('dashboard'); return false;">Gene<span>Skin</span></a>
+      <p>ID: P00007901EC · July 24, 2026</p>
+    </div>
+    <div class="foot-col"><h4></h4><ul></ul></div>
+    <div class="foot-col"><h4></h4><ul></ul></div>
+    <div class="foot-col"><h4></h4><ul></ul></div>
+    <div class="foot-bottom">
+      <p>© 2026 GeneSkin &nbsp;·&nbsp; For informational purposes only.</p>
+      <div class="foot-socials"><div class="foot-social">in</div><div class="foot-social">✉</div></div>
+    </div>
+  </footer>
+
+</div><!-- end pg-trait-detail -->
+
+
+<!-- ══════════════ COMPARISON PAGE ══════════════ -->
+<div id="pg-comparison" class="page-section">
+
+  <section class="comparison-section">
+    <div class="reveal categories-hero">
+      <h2>categories</h2>
+      <p class="categories-hero-sub">Compare your genetic risk profile across different populations and understand your trait distribution.</p>
+    </div>
+              
+        <div class="topic-list">
+          <div class="topic-row">
+            <h3>Cardiovascular</h3>
+            <p>*Highlights inherited patterns linked to heart and vascular health, including genetic tendencies influencing blood pressure regulation, lipid and cholesterol metabolism, arterial elasticity, clotting mechanisms, and inflammation-related risk markers. These insights help identify predispositions to conditions such as hypertension, atherosclerosis, thrombosis, and other cardiovascular complications, enabling early monitoring and preventive lifestyle strategies.</p>
+            <p style="margin-top:1.45rem;"> *Four Focus Areas: The analysis categorizes your results into Arterial Health (blood pressure), Cholesterol & Fats (lipids like LDL and HDL), Diseases (risk for stroke or heart failure), and Other indicators (heart structure and electrical activity).
+             Predisposition vs. Destiny: The summary emphasizes that these scores reflect predisposition, not a diagnosis. Your actual health outcomes are heavily influenced by environmental factorsâ€”both controllable (diet and exercise) and uncontrollable (pollution and stress)</p>
+          </div>
+          <div class="topic-row">
+            <h3>Nutrition</h3>
+            <p>Explains how your unique genetic profile may influence the way your body processes nutrients, regulates appetite signals, metabolizes carbohydrates and fats, and responds to various vitamins, minerals, and micronutrients. By understanding these inherited tendencies, it provides insights into potential nutrient sensitivities, metabolic efficiency, and dietary preferences, enabling more precise, personalized diet planning, optimized nutrition strategies, and long-term wellness management tailored specifically to your genetic makeup.</p>
+          <p style="margin-top:1.45rem;"> *Four Focus Areas: The analysis categorizes your results into Arterial Health (blood pressure), Cholesterol & Fats (lipids like LDL and HDL), Diseases (risk for stroke or heart failure), and Other indicators (heart structure and electrical activity).
+             Predisposition vs. Destiny: The summary emphasizes that these scores reflect predisposition, not a diagnosis. Your actual health outcomes are heavily influenced by environmental factorsâ€”both controllable (diet and exercise) and uncontrollable (pollution and stress)</p>
+          </div>
+          </div>
+          <div class="topic-row academicsport">
+            <h4>Academic and Sport</h4>
+            <p>Summarizes traits connected to cognitive focus, stress resilience, recovery rate, and exercise response to support learning strategy and training optimization.</p>
+            <p style="margin-top:1.45rem;"> *Four Focus Areas: The analysis categorizes your results into Arterial Health (blood pressure), Cholesterol & Fats (lipids like LDL and HDL), Diseases (risk for stroke or heart failure), and Other indicators (heart structure and electrical activity).
+             Predisposition vs. Destiny: The summary emphasizes that these scores reflect predisposition, not a diagnosis. Your actual health outcomes are heavily influenced by environmental factorsâ€”both controllable (diet and exercise) and uncontrollable (pollution and stress)</p>
+          </div>
+        </div>
+  </section>
+
+  <footer>
+    <div class="foot-brand">
+      <a href="#" class="nav-logo" onclick="showPage('dashboard'); return false;">Polygenic<span>RiskScore</span></a>
+      <p>ID: P00007901EC · July 24, 2026 · For informational purposes only.</p>
+    </div>
+    <div class="foot-col">
+      <h4>Navigate</h4>
+      <ul>
+        <li><a href="#" onclick="showPage('dashboard'); return false;">Dashboard</a></li>
+        <li><a href="#" onclick="showPage('allergies'); return false;">Allergies</a></li>
+      </ul>
+    </div>
+    <div class="foot-col"><h4></h4><ul></ul></div>
+    <div class="foot-col"><h4></h4><ul></ul></div>
+    <div class="foot-bottom">
+      <p>© 2026 GeneSkin &nbsp;·&nbsp; Not a substitute for professional medical advice.</p>
+      <div class="foot-socials"><div class="foot-social">in</div><div class="foot-social">✉</div></div>
+    </div>
+  </footer>
+
+</div><!-- end pg-comparison -->
+
+<script src="main.js"></script>
+</body>
+</html>
+

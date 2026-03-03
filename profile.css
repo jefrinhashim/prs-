@@ -1,0 +1,243 @@
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'DM Sans', Arial, sans-serif;
+  background: linear-gradient(135deg, #928e8e, #f2f6f3 55%);
+  display: grid;
+  place-items: center;
+  padding: 20px;
+}
+
+.profile-wrap {
+  width: 100%;
+  max-width: 980px;
+}
+
+.profile-card {
+  background: #ffffff69;
+  border-radius: 16px;
+  padding: 28px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.15);
+}
+
+h1 {
+  margin: 0;
+  color: #1f5b3a;
+  font-size: 32px;
+}
+
+.sub {
+  margin: 8px 0 20px;
+  color: #55615a;
+}
+
+.user-block {
+  background: #f4f7f5;
+  border: 1px solid #d8e2db;
+  border-radius: 12px;
+  padding: 14px 16px;
+  margin-bottom: 20px;
+}
+
+.label {
+  display: block;
+  font-size: 12px;
+  color: #607068;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+#userId {
+  color: #173f2a;
+  font-size: 20px;
+}
+
+.user-meta {
+  margin-top: 10px;
+}
+
+.meta-label {
+  display: block;
+  font-size: 12px;
+  color: #607068;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.meta-value {
+  color: #173f2a;
+  font-size: 18px;
+}
+
+.cat-block h2 {
+  margin: 0 0 12px;
+  color: #1f5b3a;
+  font-size: 20px;
+}
+
+.category-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.category-link {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 90%;
+  text-align: left;
+  min-height: 200px;
+  border: 1px solid #b8c9be;
+  border-radius: 14px;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 700;
+  padding: 16px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.category-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.22);
+}
+
+.category-link::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(9, 20, 14, 0.2) 10%, rgba(9, 20, 14, 0.72) 100%);
+}
+
+.category-title,
+.category-note {
+  position: relative;
+  z-index: 1;
+}
+
+.category-note {
+  margin-top: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.category-title {
+  line-height: 1.25;
+}
+
+.category-1 {
+  background-image: url('../meditation.png');
+  background-size: 490px; 
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #163c2a;
+}
+
+.category-2 {
+  background-image: url('https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&w=1400&q=80');
+}
+
+.category-3 {
+
+}
+
+.category-4 {
+  background-image: url('https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=1400&q=80');
+}
+
+@media (max-width: 760px) {
+  body {
+    padding: 12px;
+    align-items: stretch;
+  }
+
+  .profile-wrap {
+    max-width: 100%;
+  }
+
+  .profile-card {
+    border-radius: 12px;
+    padding: 18px 14px;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.14);
+  }
+
+  h1 {
+    font-size: 26px;
+  }
+
+  .sub {
+    margin: 6px 0 14px;
+    font-size: 14px;
+  }
+
+  #userId {
+    font-size: 18px;
+  }
+
+  .meta-value {
+    font-size: 16px;
+  }
+
+  .cat-block h2 {
+    font-size: 18px;
+  }
+
+  .category-list {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .category-link {
+    min-height: 160px;
+    border-radius: 12px;
+    font-size: 17px;
+    padding: 14px;
+  }
+
+  .category-note {
+    font-size: 11px;
+  }
+
+  .category-link:hover {
+    transform: none;
+    box-shadow: none;
+  }
+
+  .category-link:active {
+    transform: scale(0.995);
+  }
+}
+
+@media (max-width: 420px) {
+  body {
+    padding: 10px;
+  }
+
+  .profile-card {
+    padding: 16px 12px;
+  }
+
+  .user-block {
+    padding: 12px;
+  }
+
+  .category-link {
+    min-height: 146px;
+    font-size: 16px;
+  }
+}

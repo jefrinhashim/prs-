@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profile</title>
+  <link rel="stylesheet" href="profile.css" />
+</head>
+<body>
+  <main class="profile-wrap">
+    <section class="profile-card">
+      <h1>Welcome back</h1>
+      <p class="sub">Signed in successfully.</p>
+
+      <div class="user-block">
+        <span class="label">User ID</span>
+        <strong id="userId">USR-USER0001</strong>
+        <div class="user-meta">
+          <span class="meta-label">Gender</span>
+          <strong class="meta-value">Male</strong>
+        </div>
+      </div>
+
+      <div class="cat-block">
+        <h2>Accessible Categories</h2>
+        <ul id="categoryList" class="category-list">
+          <li>
+            <button class="category-link category-1" type="button" onclick="window.location.href='dashboard.html'">
+              
+              <span class="category-title">Health</span>
+              <span class="category-note">Tap to open report</span>
+            </button>
+          </li>
+          <li>
+            <button class="category-link category-2" type="button" onclick="window.location.href='dashboard.html'">
+              <span class="category-title">Nutrition</span>
+              <span class="category-note">Tap to open report</span>
+            </button>
+          </li>
+          <li>
+            <button class="category-link category-3" type="button" onclick="window.location.href='dashboard.html'">
+              <span class="category-title">Other</span>
+              <span class="category-note">Tap to open report</span>
+            </button>
+          </li>
+         
+          <li>
+            <button class="category-link category-4" type="button" onclick="window.location.href='dashboard.html'">
+              <span class="category-title">Physical Characteristics</span>
+              <span class="category-note">Tap to open report</span>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <script src="profile.js"></script>
+</body>
+</html>

@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>prs — Genetic Skin Health Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/output/code/index.css" />
+  </style>
+</head>
+<body>
+
+<!-- ==================== LANDING PAGE ==================== -->
+<div id="landing-page" class="page">
+
+  <nav class="landing-nav">
+    <div class="nav-brand">
+      <div class="brand-dot"><span>p</span></div>
+      <span class="brand-name">prs</span>
+    </div>
+    <div class="nav-links">
+      <a href="#how-it-works">How It Works</a>
+      <a href="#categories">Categories</a>
+      <a href="#" class="nav-cta" onclick="showDashboard(); return false;">Login</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-left">
+      <div class="hero-badge">
+        <span class="pulse-dot"></span>
+        Precision Genomic Analysis
+      </div>
+      <h1 class="hero-title">Your Genetic<br/><em>Skin Health</em> Report</h1>
+      <p class="hero-desc">Unlock the power of your DNA to understand skin sensitivities, disease risk, and aesthetic predispositions — powered by polygenic risk scoring from 500K+ genetic variants.</p>
+      <div class="hero-actions">
+        <button class="btn-primary" onclick="showDashboard()">View Sample Report</button>
+        <button class="btn-secondary" onclick="showDashboard()">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg>
+          Login to Account
+        </button>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-pill"><strong>34</strong>Traits Analyzed</div>
+        <div class="stat-pill"><strong>500K+</strong>Variants Scored</div>
+        <div class="stat-pill"><strong>4</strong>Skin Categories</div>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-visual-card">
+        <div class="hvc-label">Alex Laurent · Report #DG-2024-0847</div>
+        <div class="hvc-name">Overall Genetic Skin Risk</div>
+        <div class="hvc-score-row">
+          <div class="hvc-big-score">74</div>
+          <div class="hvc-score-meta">
+            <div class="hvc-out">/100</div>
+            <div class="hvc-grade">Moderate Risk</div>
+          </div>
+        </div>
+        <div class="hvc-bars">
+          <div class="hvc-bar-row">
+            <span class="hvc-bar-label">Allergies</span>
+            <div class="hvc-bar-track"><div class="hvc-bar-fill" style="width:55%; background:var(--sage);"></div></div>
+            <span class="hvc-bar-pct">55%</span>
+          </div>
+          <div class="hvc-bar-row">
+            <span class="hvc-bar-label">Dermatological</span>
+            <div class="hvc-bar-track"><div class="hvc-bar-fill" style="width:82%; background:var(--terra);"></div></div>
+            <span class="hvc-bar-pct">82%</span>
+          </div>
+          <div class="hvc-bar-row">
+            <span class="hvc-bar-label">Aesthetics</span>
+            <div class="hvc-bar-track"><div class="hvc-bar-fill" style="width:48%; background:var(--gold);"></div></div>
+            <span class="hvc-bar-pct">48%</span>
+          </div>
+          <div class="hvc-bar-row">
+            <span class="hvc-bar-label">Markers</span>
+            <div class="hvc-bar-track"><div class="hvc-bar-fill" style="width:63%; background:var(--sky);"></div></div>
+            <span class="hvc-bar-pct">63%</span>
+          </div>
+        </div>
+        <div class="hvc-footer">
+          <span class="hvc-tag">Analyzed Jan 15, 2026</span>
+          <span class="hvc-tag">34 traits</span>
+          <span class="hvc-tag">500K variants</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="how-it-works" style="background: var(--white);">
+    <div class="section-eyebrow">Process</div>
+    <h2 class="section-title">How It Works</h2>
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-number">01</div>
+        <div class="step-icon-wrap blue">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm7 13H5v-.23c0-.62.28-1.2.76-1.58C7.47 15.82 9.64 15 12 15s4.53.82 6.24 2.19c.48.38.76.97.76 1.58V19z"/></svg>
+        </div>
+        <h3>Submit Your DNA</h3>
+        <p>Upload your raw genetic data file from 23andMe, AncestryDNA, or any FASTQ/VCF format source.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-number">02</div>
+        <div class="step-icon-wrap green">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M5 9.2h3V19H5V9.2zM10.6 5h2.8v14h-2.8V5zm5.6 8H19v6h-2.8v-6z"/></svg>
+        </div>
+        <h3>Polygenic Risk Analysis</h3>
+        <p>Our algorithm computes PRS across 34 skin traits using peer-reviewed GWAS datasets and proprietary weighting.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-number">03</div>
+        <div class="step-icon-wrap purple">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg>
+        </div>
+        <h3>Personalized Report</h3>
+        <p>Receive a detailed, actionable skin health dashboard with risk scores, trait insights, and tailored recommendations.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section categories-preview" id="categories">
+    <div class="section-eyebrow">Coverage</div>
+    <h2 class="section-title">What We Analyze</h2>
+    <div class="cat-grid">
+      <div class="cat-card allergies">
+        <span class="cat-emoji">🧬</span>
+        <h3>Allergies</h3>
+        <p>Mosquito bite sensitivity, eczema risk, allergic diseases and environmental sensitivities.</p>
+        <div class="cat-count">4 traits</div>
+      </div>
+      <div class="cat-card derm">
+        <span class="cat-emoji">🔬</span>
+        <h3>Dermatological Diseases</h3>
+        <p>Skin cancer risk, acne, psoriasis, vitiligo, rosacea, and 11 additional conditions.</p>
+        <div class="cat-count">15 traits</div>
+      </div>
+      <div class="cat-card aesthetics">
+        <span class="cat-emoji">✨</span>
+        <h3>Skin Aesthetics</h3>
+        <p>Wrinkle predisposition, pigmentation, hydration levels, elasticity and UV sensitivity.</p>
+        <div class="cat-count">8 traits</div>
+      </div>
+      <div class="cat-card markers">
+        <span class="cat-emoji">📊</span>
+        <h3>Skin Health Markers</h3>
+        <p>Kallikrein-7 and ceramide levels — key biomarkers that govern skin barrier function.</p>
+        <div class="cat-count">2 traits</div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="landing-footer">
+    <div class="footer-brand">
+      <span class="brand-name">prs</span>
+      <p>Advancing skin health through genomics.</p>
+    </div>
+    <div class="footer-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+      <a href="#">Scientific References</a>
+      <a href="#">Contact</a>
+    </div>
+    <div class="footer-note">© 2026 DermGenix. For informational purposes only. Not medical advice.</div>
+  </footer>
+</div>
+
+<!-- ==================== DASHBOARD ==================== -->
+<div id="dashboard-page" class="page active">
+
+  <!-- MOBILE TOPBAR -->
+  <div class="mobile-topbar">
+    <div class="mobile-topbar-brand">
+      <div class="sb-brand-dot"><span>p</span></div>
+      <span class="sb-brand-name">prs</span>
+    </div>
+    <button class="mobile-hamburger" id="hamburger-btn" onclick="toggleSidebar()" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <!-- SIDEBAR OVERLAY -->
+  <div class="sidebar-overlay" id="sidebar-overlay" onclick="closeSidebar()"></div>
+
+  <div class="dashboard-body">
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <div class="sb-brand-dot"><span>p</span></div>
+      <span class="sb-brand-name">prs</span>
+    </div>
+    <div class="user-profile">
+      <div class="avatar">AL</div>
+      <div class="user-info">
+        <span class="user-name">Alex Laurent</span>
+        <span class="user-tag">DG-2024-0847</span>
+      </div>
+    </div>
+    <div class="sidebar-search">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="8" stroke="rgba(255,255,255,0.4)" stroke-width="2"/><path d="m21 21-4.35-4.35" stroke="rgba(255,255,255,0.4)" stroke-width="2" stroke-linecap="round"/></svg>
+      <input type="text" id="trait-search" class="searchtraits"  placeholder="Search traits..." oninput="filterTraits(this.value) " />
+    </div>
+    <nav class="sidebar-nav">
+      <div class="nav-group-label">Dashboard</div>
+      <a href="#" class="nav-item active" data-view="overview" onclick="showView('overview'); return false;">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/></svg>
+        Overview
+      </a>
+      <div class="nav-group-label">Categories</div>
+      <a href="#" class="nav-item" data-view="allergies" onclick="showView('allergies'); return false;">
+        <svg width="15" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+        Allergies
+        <span class="nav-badge badge-high">1 High</span>
+      </a>
+      <a href="#" class="nav-item" data-view="dermatological" onclick="showView('dermatological'); return false;">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+        Dermatological
+        <span class="nav-badge badge-danger">2 Very High</span>
+      </a>
+      <a href="#" class="nav-item" data-view="aesthetics" onclick="showView('aesthetics'); return false;">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z"/></svg>
+        SkinAesthetics
+      </a>
+      <a href="#" class="nav-item" data-view="markers" onclick="showView('markers'); return false;">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M5 9.2h3V19H5V9.2zM10.6 5h2.8v14h-2.8V5zm5.6 8H19v6h-2.8v-6z"/></svg>
+        Health Markers
+      </a>
+      <div class="nav-group-label">Tools</div>
+      <a href="#" class="nav-item" data-view="recommendations" onclick="showView('recommendations'); return false;">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg>
+        Recommendations
+      </a>
+      <a href="#" class="nav-item download-btn" onclick="triggerDownload(); return false;">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+        Download Report
+      </a>
+    </nav>
+  </aside>
+
+  <main class="main-content">
+    <header class="topbar">
+      <div class="topbar-left">
+        <h2 id="page-title">Overview</h2>
+        <span id="page-subtitle">Genetic Skin Health Summary</span>
+      </div>
+      <div class="topbar-right">
+        <div class="filter-group">
+          <span class="filter-label">Filter:</span>
+          <select id="risk-filter" onchange="filterByRisk(this.value)">
+            <option value="all">All Levels</option>
+            <option value="very-high">Very High</option>
+            <option value="high">High</option>
+            <option value="medium">Medium</option>
+            <option value="low">Low</option>
+            <option value="very-low">Very Low</option>
+          </select>
+        </div>
+        <div class="report-date">Feb 15, 2026</div>
+      </div>
+    </header>
+
+    <div class="views-container">
+
+      <!-- OVERVIEW -->
+      <div id="view-overview" class="view active">
+        <div class="bento-grid">
+
+          <!-- Alert Banner -->
+          <div class="bento-alert" style="grid-column: span 12;">
+            <div class="alert-banner">
+              <span class="alert-icon">⚠️</span>
+              <div class="alert-text">
+                <h4>Critical: Very High Risk Detected in 2 Traits</h4>
+                <p>Non-melanoma skin cancer and keratinocyte cancer show very high polygenic risk scores. Immediate dermatological consultation recommended.</p>
+              </div>
+              <button class="alert-action" onclick="showView('recommendations')">View Action Plan</button>
+            </div>
+          </div>
+
+          <!-- Score Card -->
+          <div class="bento-card bento-score">
+            <div class="card-title">Overall Risk Score</div>
+            <div class="score-ring-wrap">
+              <canvas id="scoreChart" width="160" height="160"></canvas>
+              <div class="score-center">
+                <span class="big-score">74</span>
+                <span class="score-out">/100</span>
+              </div>
+            </div>
+            <span class="score-grade" style="display:block;text-align:center;margin:0 auto 10px;width:fit-content;">Moderate</span>
+            <p class="score-desc">Your overall genetic skin risk profile. Significantly elevated in dermatological disease categories.</p>
+          </div>
+
+          <!-- Distribution -->
+          <div class="bento-card bento-dist">
+            <div class="card-title">Risk Distribution — 34 Traits</div>
+            <div class="dist-row">
+              <div class="dist-item">
+                <div class="dist-item-header"><span class="dist-label">🔴 Very High</span><span class="dist-count">2 traits</span></div>
+                <div class="dist-track"><div class="dist-fill fill-very-high" style="width: 5.9%"></div></div>
+              </div>
+              <div class="dist-item">
+                <div class="dist-item-header"><span class="dist-label">🟠 High</span><span class="dist-count">6 traits</span></div>
+                <div class="dist-track"><div class="dist-fill fill-high" style="width: 17.6%"></div></div>
+              </div>
+              <div class="dist-item">
+                <div class="dist-item-header"><span class="dist-label">🔵 Medium</span><span class="dist-count">7 traits</span></div>
+                <div class="dist-track"><div class="dist-fill fill-medium" style="width: 20.6%"></div></div>
+              </div>
+              <div class="dist-item">
+                <div class="dist-item-header"><span class="dist-label">🟢 Low</span><span class="dist-count">8 traits</span></div>
+                <div class="dist-track"><div class="dist-fill fill-low" style="width: 23.5%"></div></div>
+              </div>
+              <div class="dist-item">
+                <div class="dist-item-header"><span class="dist-label">✅ Very Low</span><span class="dist-count">11 traits</span></div>
+                <div class="dist-track"><div class="dist-fill fill-very-low" style="width: 32.4%"></div></div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Priority Traits -->
+          <div class="bento-card bento-priority">
+            <div class="card-title">Priority Attention</div>
+            <div class="priority-list">
+              <div class="priority-item" onclick="showTrait('keratinocyte')">
+                <div class="priority-dot" style="background:var(--risk-very-high)"></div>
+                <span class="priority-name">Keratinocyte Cancer</span>
+                <span class="priority-badge" style="background:rgba(193,99,74,0.12);color:var(--terra);">V. HIGH</span>
+              </div>
+              <div class="priority-item" onclick="showTrait('nonmelanoma')">
+                <div class="priority-dot" style="background:var(--risk-very-high)"></div>
+                <span class="priority-name">Non-Melanoma Cancer</span>
+                <span class="priority-badge" style="background:rgba(193,99,74,0.12);color:var(--terra);">V. HIGH</span>
+              </div>
+              <div class="priority-item" onclick="showTrait('psoriasis')">
+                <div class="priority-dot" style="background:var(--risk-high)"></div>
+                <span class="priority-name">Psoriasis</span>
+                <span class="priority-badge" style="background:rgba(212,168,83,0.15);color:#8B6914;">HIGH</span>
+              </div>
+              <div class="priority-item" onclick="showTrait('rosacea')">
+                <div class="priority-dot" style="background:var(--risk-high)"></div>
+                <span class="priority-name">Rosacea</span>
+                <span class="priority-badge" style="background:rgba(212,168,83,0.15);color:#8B6914;">HIGH</span>
+              </div>
+              <div class="priority-item" onclick="showTrait('kallikrein')">
+                <div class="priority-dot" style="background:var(--risk-high)"></div>
+                <span class="priority-name">Kallikrein-7 Levels</span>
+                <span class="priority-badge" style="background:rgba(212,168,83,0.15);color:#8B6914;">HIGH</span>
+              </div>
+            </div>
+          </div>
+
+         
+            
+          <!-- Category Summaries -->
+          <div class="bento-card bento-cat cat-accent-allergies " onclick="showView('allergies')" style="cursor:pointer;">
+            <div class="card-title">Allergies</div>
+            <div class="cat-summary-num">4</div>
+            <div class="cat-summary-label">traits analyzed</div>
+            <div class="cat-summary-bar"><div class="cat-summary-fill" style="width:55%;background:var(--sage);"></div></div>
+            <div class="cat-summary-sub">1 High · 3 Low or below</div>
+          </div>
+          <div class="bento-card bento-cat cat-accent-derm" onclick="showView('dermatological')" style="cursor:pointer;">
+            <div class="card-title">Dermatological</div>
+            <div class="cat-summary-num">15</div>
+            <div class="cat-summary-label">traits analyzed</div>
+            <div class="cat-summary-bar"><div class="cat-summary-fill" style="width:82%;background:var(--terra);"></div></div>
+            <div class="cat-summary-sub">2 Very High · 3 High</div>
+          </div>
+          <div class="bento-card bento-cat cat-accent-aesthetics" onclick="showView('aesthetics')" style="cursor:pointer;">
+            <div class="card-title AESTHETHIC">Aesthetics</div>
+            <div class="cat-summary-num">8</div>
+            <div class="cat-summary-label">traits analyzed</div>
+            <div class="cat-summary-bar"><div class="cat-summary-fill" style="width:48%;background:var(--gold);"></div></div>
+            <div class="cat-summary-sub">1 High · 3 Medium</div>
+          </div>
+          <div class="bento-card bento-cat cat-accent-markers markaesth" onclick="showView('markers')" style="cursor:pointer;">
+            <div class="card-title ">markers</div>
+            <div class="cat-summary-num">2</div>
+            <div class="cat-summary-label">traits analyzed</div>
+            <div class="cat-summary-bar"><div class="cat-summary-fill" style="width:63%;background:var(--sky);"></div></div>
+            <div class="cat-summary-sub">1 High · 1 Very Low</div>
+          </div>
+ <!-- Polar Chart -->
+          <div class="bento-card bento-radar">
+            <div class="card-title">Category Risk Profile</div>
+            <canvas id="polarChart" height="230"></canvas>
+          </div>
+          <div class="bento-card bento-routine" id="routine-builder-card">
+  <div class="routine-head">
+    <div class="card-title">Routine Builder</div>
+    <span class="routine-profile-badge" id="routine-profile-badge">Profile: --</span>
+  </div>
+  <p class="routine-sub" id="routine-sub">
+    Morning and night checklist customized to your current genetic risk profile.
+  </p>
+  <div class="routine-progress">
+    <div class="routine-progress-meta" id="routine-progress-meta">0/0 completed today</div>
+    <div class="routine-progress-track">
+      <div class="routine-progress-fill" id="routine-progress-fill" style="width:0%"></div>
+    </div>
+  </div>
+  <div class="routine-grid">
+    <div class="routine-subcard routine-subcard--morning">
+      <div class="routine-subcard-header">
+        <span class="routine-subcard-icon">☀️</span>
+        <div class="routine-col-title">Morning</div>
+      </div>
+      <ul class="routine-list" id="routine-morning-list"></ul>
+    </div>
+    <div class="routine-subcard routine-subcard--night">
+      <div class="routine-subcard-header">
+        <span class="routine-subcard-icon">🌙</span>
+        <div class="routine-col-title">Night</div>
+      </div>
+      <ul class="routine-list" id="routine-night-list"></ul>
+    </div>
+  </div>
+  <div class="routine-footer" id="routine-footer-note"></div>
+</div>
+
+<style>
+  .routine-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 12px;
+  }
+
+  .routine-subcard {
+    border-radius: 14px;
+    padding: 14px 14px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    transition: box-shadow 0.2s ease;
+  }
+
+  .routine-subcard:hover {
+    box-shadow: 0 4px 20px rgba(0,0,0,0.13);
+  }
+
+  /* ☀️ Morning — light sky blue */
+  .routine-subcard--morning {
+    background: linear-gradient(145deg, #e8f4fd 0%, #d0eaf9 100%);
+    border: 1px solid #b6dcf5;
+  }
+
+  .routine-subcard--morning .routine-col-title {
+    color: #1a6fa8;
+    font-weight: 700;
+    font-size: 0.92rem;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+  }
+
+  /* 🌙 Night — deep navy blue */
+  .routine-subcard--night {
+    background: linear-gradient(145deg, #1a2a4a 0%, #0f1d38 100%);
+    border: 1px solid #243555;
+  }
+
+  .routine-subcard--night .routine-col-title {
+    color: #7eb8e8;
+    font-weight: 700;
+    font-size: 0.92rem;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+  }
+
+  .routine-subcard--night .routine-list,
+  .routine-subcard--night .routine-list li {
+    color: #c5daf0;
+  }
+
+  .routine-subcard-header {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0);
+  }
+
+  .routine-subcard--morning .routine-subcard-header {
+    border-bottom-color: rgba(175, 38, 122, 0);
+  }
+
+  .routine-subcard-icon {
+    font-size: 1rem;
+    line-height: 1;
+    display: none;
+  }
+
+  .routine-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    color: white;
+  }
+</style>
+        </div>
+      </div>
+
+      <!-- ALLERGIES -->
+      <div id="view-allergies" class="view">
+        <div class="view-intro">Allergy-related traits reflect your genetic predisposition to immune hypersensitivity, eczema, and environmental reactivity.</div>
+        <div class="traits-grid">
+          <div class="trait-card" data-risk="high" data-category="allergies" onclick="showTrait('mosquito')">
+            <div class="trait-risk-strip"><div class="risk-fill risk-high" style="width:72%"></div></div>
+            <div class="trait-header"><span class="trait-name">Mosquito Bite Sensitivity</span><span class="risk-badge risk-high">High</span></div>
+            <p class="trait-desc">IL-4 and IgE pathway variants indicate an elevated immune response to mosquito salivary antigens, predicting increased whealing and pruritus.</p>
+            <div class="trait-footer"><span class="trait-prs">PRS: 1.88</span><span class="trait-pop">81st percentile</span></div>
+          </div>
+          <div class="trait-card" data-risk="low" data-category="allergies" onclick="showTrait('eczema')">
+            <div class="trait-risk-strip"><div class="risk-fill risk-low" style="width:28%"></div></div>
+            <div class="trait-header"><span class="trait-name">Eczema (Atopic Dermatitis)</span><span class="risk-badge risk-low">Low</span></div>
+            <p class="trait-desc">FLG and SPINK5 filaggrin-related variants are largely protective, suggesting low lifetime eczema predisposition despite elevated Kallikrein-7 levels.</p>
+            <div class="trait-footer"><span class="trait-prs">PRS: 0.73</span><span class="trait-pop">25th percentile</span></div>
+          </div>
+          <div class="trait-card" data-risk="medium" data-category="allergies" onclick="showTrait('allergic-disease')">
+            <div class="trait-risk-strip"><div class="risk-fill risk-medium" style="width:52%"></div></div>
+            <div class="trait-header"><span class="trait-name">Allergic Disease (General)</span><span class="risk-badge risk-medium">Medium</span></div>
+            <p class="trait-desc">Broad atopic diathesis variants across GWAS loci show moderate polygenic risk for allergic disease spectrum.</p>
+            <div class="trait-footer"><span class="trait-prs">PRS: 1.29</span><span class="trait-pop">66th percentile</span></div>
+          </div>
+          <div class="trait-card" data-risk="very-low" data-category="allergies" onclick="showTrait('hay-fever')">
+            <div class="trait-risk-strip"><div class="risk-fill risk-very-low" style="width:18%"></div></div>
+            <div class="trait-header"><span class="trait-name">Hay Fever (Allergic Rhinitis)</span><span class="risk-badge risk-very-low">Very Low</span></div>
+            <p class="trait-desc">HLA and cytokine gene variants are highly protective, conferring very low risk for pollen-triggered rhinoconjunctivitis.</p>
+            <div class="trait-footer"><span class="trait-prs">PRS: 0.56</span><span class="trait-pop">16th percentile</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DERMATOLOGICAL -->
+      <div id="view-dermatological" class="view">
+        <div class="view-intro">Dermatological disease traits reflect genetic risk for clinically significant skin conditions requiring monitoring and management.</div>
+        <div class="traits-grid" id="derm-grid">
+          <div class="trait-card" data-risk="very-high" data-category="dermatological" onclick="showTrait('nonmelanoma')">
+            <div class="trait-risk-strip"><div class="risk-fill risk-very-high" style="width:92%"></div></div>
+            <div class="trait-header"><span class="trait-name">Non-Melanoma Skin Cancer</span><span class="risk-badge risk-very-high">Very High</span></div>
+            <p class="trait-desc">MC1R, PTCH1, and TP53 variants significantly elevate squamous and basal cell carcinoma risk. Immediate dermatological follow-up recommended.</p>
+            <div class="trait-footer"><span class="trait-prs">PRS: 2.47</span><span class="trait-pop">95th percentile</span></div>
+          </div>
+          <div class="trait-card" data-risk="very-high" data-category="dermatological" onclick="showTrait('keratinocyte')">
+            <div class="trait-risk-strip"><div class="risk-fill risk-very-high" style="width:88%"></div></div>
+            <div class="trait-header"><span class="trait-name">Keratinocyte Cancer</span><span class="risk-badge risk-very-high">Very High</span></div>
+            <p class="trait-desc">Multiple GWAS risk loci in keratinocyte-differentiation genes converge on very high lifetime risk. Annual dermatoscopic screening essential.</p>
+            <div class="trait-footer"><span class="trait-prs">PRS: 2.31</span><span class="trait-pop">92nd percentile</span></div>
+          </div>
+          <div class="trait-card" data-risk="high" data-category="dermatological" onclick="showTrait('psoriasis')">
+            <div class="trait-risk-strip"><div class="risk-fill risk-high" style="width:74%"></div></div>
+            <div class="trait-header"><span class="trait-name">Psoriasis</span><span class="risk-badge risk-high">High</span></div>
+            <p class="trait-desc">HLA-C*06:02 and IL-23 pathway variants significantly increase psoriasis susceptibility.</p>
+            <div class="trait-footer"><span class="trait-prs">PRS: 1.94</span><span class="trait-pop">85th percentile</span></div>
+          </div>
+          <div class="trait-card" data-risk="high" data-category="dermatological" onclick="showTrait('rosacea')">
+            <div class="trait-risk-strip"><div class="risk-fill risk-high" style="width:68%"></div></div>
+            <div class="trait-header"><span class="trait-name">Rosacea</span><span class="risk-badge risk-high">High</span></div>
+            <p class="trait-desc">Cathelicidin and inflammatory vascular response genes show elevated rosacea predisposition.</p>
+            <div class="trait-footer"><span class="trait-prs">PRS: 1.78</span><span class="trait-pop">80th percentile</span></div>
+          </div>
+          <div class="trait-card" data-risk="high" data-category="dermatological" onclick="showTrait('acne')">
+            <div class="trait-risk-strip"><div class="risk-fill risk-high" style="width:62%"></div></div>
+            <div class="trait-header"><span class="trait-name">Acne Vulgaris</span><span class="risk-badge risk-high">High</span></div>
+            <p class="trait-desc">Sebaceous gland activity and androgen receptor variants indicate above-average acne susceptibility.</p>
+            <div class="trait-footer"><span class="trait-prs">PRS: 1.61</span><span class="trait-pop">77th percentile</span></div>
+          </div>
+          <div class="trait-card" data-risk="medium" data-category="dermatological" onclick="showTrait('melanoma')">
+            <div class="trait-risk-strip"><div class="risk-fill risk-medium" style="width:55%"></div></div>
+            <div class="trait-header"><span class="trait-name">Melanoma</span><span class="risk-badge risk-medium">Medium</span></div>
+            <p class="trait-desc">CDKN2A and MC1R risk alleles moderately elevate melanoma susceptibility. Sun protection advised.</p>
+            <div class="trait-footer"><span class="trait-prs">PRS: 1.38</span><span class="trait-pop">69th percentile</span></div>
+          </div>
+          <div class="trait-card" data-risk="medium" data-category="dermatological" onclick="showTrait('vitiligo')">
+            <div class="trait-risk-strip"><div class="risk-fill risk-medium" style="width:50%"></div></div>
+            <div class="trait-header"><span class="trait-name">Vitiligo</span><span class="risk-badge risk-medium">Medium</span></div>
+            <p class="trait-desc">HLA and CTLA4 immune regulation variants indicate moderate predisposition to melanocyte autoimmune loss.</p>
+            <div class="trait-footer"><span class="trait-prs">PRS: 1.26</span><span class="trait-pop">65th percentile</span></div>
+          </div>
+          <div class="trait-card" data-risk="medium" data-category="dermatological" onclick="showTrait('soft-tissue')">
+            <div class="trait-risk-strip"><div class="risk-fill risk-medium" style="width:42%"></div></div>
+            <div class="trait-header"><span class="trait-name">Soft Tissue Diseases</span><span class="risk-badge risk-medium">Medium</span></div>
+            <p class="trait-desc">Connective tissue remodeling gene variants indicate moderate risk for soft tissue complications.</p>
+            <div class="trait-footer"><span class="trait-prs">PRS: 1.09</span><span class="trait-pop">58th percentile</span></div>
+          </div>
+          <div class="trait-card" data-risk="low" data-category="dermatological" onclick="showTrait('urticaria')">
+            <div class="trait-risk-strip"><div class="risk-fill risk-low" style="width:25%"></div></div>
+            <div class="trait-header"><span class="trait-name">Urticaria (Hives)</span><span class="risk-badge risk-low">Low</span></div>
+            <p class="trait-desc">General urticaria susceptibility is low based on complement and histamine pathway variants.</p>
+            <div class="trait-footer"><span class="trait-prs">PRS: 0.71</span><span class="trait-pop">27th percentile</span></div>
+          </div>
+          <div class="trait-card" data-risk="low" data-category="dermatological" onclick="showTrait('urticaria-chronic')">
+            <div class="trait-risk-strip"><div class="risk-fill risk-low" style="width:30%"></div></div>
+            <div class="trait-header"><span class="trait-name">Chronic Spontaneous Urticaria</span><span class="risk-badge risk-low">Low</span></div>
+            <p class="trait-desc">Mast cell degranulation pathway variants are largely neutral, conferring low chronic hive risk.</p>
+            <div class="trait-footer"><span class="trait-prs">PRS: 0.81</span><span class="trait-pop">33rd percentile</span></div>
+          </div>
+          <div class="trait-card" data-risk="low" data-category="dermatological" onclick="showTrait('leprosy')">
+            <div class="trait-risk-strip"><div class="risk-fill risk-low" style="width:18%"></div></div>
+            <div class="trait-header"><span class="trait-name">Leprosy</span><span class="risk-badge risk-low">Low</span></div>
+            <p class="trait-desc">Innate immunity gene NOD2 and LRRK2 variants indicate relatively strong immune defense against M. leprae.</p>
+            <div class="trait-footer"><span class="trait-prs">PRS: 0.58</span><span class="trait-pop">19th percentile</span></div>
+          </div>
+          <div class="trait-card" data-risk="very-low" data-category="dermatological" onclick="showTrait('keloid')">
+            <div class="trait-risk-strip"><div class="risk-fill risk-very-low" style="width:12%"></div></div>
+            <div class="trait-header"><span class="trait-name">Keloid</span><span class="risk-badge risk-very-low">Very Low</span></div>
+            <p class="trait-desc">TGF-β pathway variants indicate very low predisposition to keloid scar formation after injury.</p>
+            <div class="trait-footer"><span class="trait-prs">PRS: 0.42</span><span class="trait-pop">11th percentile</span></div>
+          </div>
+          <div class="trait-card" data-risk="very-low" data-category="dermatological" onclick="showTrait('dermatomyositis')">
+            <div class="trait-risk-strip"><div class="risk-fill risk-very-low" style="width:8%"></div></div>
+            <div class="trait-header"><span class="trait-name">Dermatomyositis</span><span class="risk-badge risk-very-low">Very Low</span></div>
+            <p class="trait-desc">Autoimmune muscle-skin inflammation variants show protective profile in your genomic data.</p>
+            <div class="trait-footer"><span class="trait-prs">PRS: 0.31</span><span class="trait-pop">8th percentile</span></div>
+          </div>
+          <div class="trait-card" data-risk="very-low" data-category="dermatological" onclick="showTrait('dupuytren')">
+            <div class="trait-risk-strip"><div class="risk-fill risk-very-low" style="width:15%"></div></div>
+            <div class="trait-header"><span class="trait-name">Dupuytren's Disease</span><span class="risk-badge risk-very-low">Very Low</span></div>
+            <p class="trait-desc">Palmar fibromatosis risk variants are largely absent in your profile, conferring strong protection.</p>
+            <div class="trait-footer"><span class="trait-prs">PRS: 0.49</span><span class="trait-pop">15th percentile</span></div>
+          </div>
+          <div class="trait-card" data-risk="high" data-category="dermatological" onclick="showTrait('hidradenitis')">
+            <div class="trait-risk-strip"><div class="risk-fill risk-high" style="width:66%"></div></div>
+            <div class="trait-header"><span class="trait-name">Hidradenitis Suppurativa</span><span class="risk-badge risk-high">High</span></div>
+            <p class="trait-desc">Notch signaling and TNF-α variants predict elevated risk for chronic inflammatory follicular skin disease.</p>
+            <div class="trait-footer"><span class="trait-prs">PRS: 1.72</span><span class="trait-pop">78th percentile</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- AESTHETICS -->
+      <div id="view-aesthetics" class="view">
+        <div class="view-intro">Aesthetic traits represent your genetic baseline for visible skin characteristics — factors that influence aging, pigmentation, and structural integrity.</div>
+        <div class="traits-grid" id="aesthetics-grid">
+          <div class="trait-card" data-risk="medium" data-category="aesthetics" onclick="showTrait('eye-wrinkles')">
+            <div class="trait-risk-strip"><div class="risk-fill risk-medium" style="width:54%"></div></div>
+            <div class="trait-header"><span class="trait-name">Eye Wrinkles</span><span class="risk-badge risk-medium">Medium</span></div>
+            <p class="trait-desc">Periorbital collagen synthesis gene variants indicate moderate predisposition to crow's feet formation.</p>
+            <div class="trait-footer"><span class="trait-prs">PRS: 1.33</span><span class="trait-pop">70th percentile</span></div>
+          </div>
+          <div class="trait-card" data-risk="medium" data-category="aesthetics" onclick="showTrait('facial-wrinkles')">
+            <div class="trait-risk-strip"><div class="risk-fill risk-medium" style="width:48%"></div></div>
+            <div class="trait-header"><span class="trait-name">Facial Wrinkles</span><span class="risk-badge risk-medium">Medium</span></div>
+            <p class="trait-desc">Global collagen and elastin turnover variants show average predisposition for facial aging.</p>
+            <div class="trait-footer"><span class="trait-prs">PRS: 1.19</span><span class="trait-pop">62nd percentile</span></div>
+          </div>
+          <div class="trait-card" data-risk="low" data-category="aesthetics" onclick="showTrait('pigmentation-uv')">
+            <div class="trait-risk-strip"><div class="risk-fill risk-low" style="width:32%"></div></div>
+            <div class="trait-header"><span class="trait-name">Pigmentation (UV)</span><span class="risk-badge risk-low">Low</span></div>
+            <p class="trait-desc">MC1R and OCA2 variants suggest relatively stable UV-induced pigmentation response with lower spotting risk.</p>
+            <div class="trait-footer"><span class="trait-prs">PRS: 0.84</span><span class="trait-pop">36th percentile</span></div>
+          </div>
+          <div class="trait-card" data-risk="medium" data-category="aesthetics" onclick="showTrait('pigmentation-polarized')">
+            <div class="trait-risk-strip"><div class="risk-fill risk-medium" style="width:58%"></div></div>
+            <div class="trait-header"><span class="trait-name">Pigmentation (Polarized Light)</span><span class="risk-badge risk-medium">Medium</span></div>
+            <p class="trait-desc">Sub-surface melanin distribution variants indicate moderate risk of uneven deep pigmentation patterns.</p>
+            <div class="trait-footer"><span class="trait-prs">PRS: 1.44</span><span class="trait-pop">73rd percentile</span></div>
+          </div>
+          <div class="trait-card" data-risk="very-low" data-category="aesthetics" onclick="showTrait('hydration')">
+            <div class="trait-risk-strip"><div class="risk-fill risk-very-low" style="width:14%"></div></div>
+            <div class="trait-header"><span class="trait-name">Skin Hydration</span><span class="risk-badge risk-very-low">Very Low</span></div>
+            <p class="trait-desc">Aquaporin and NMF-related gene variants are highly favorable, predicting excellent baseline skin moisture retention.</p>
+            <div class="trait-footer"><span class="trait-prs">PRS: 0.45</span><span class="trait-pop">13th percentile</span></div>
+          </div>
+          <div class="trait-card" data-risk="very-low" data-category="aesthetics" onclick="showTrait('elasticity')">
+            <div class="trait-risk-strip"><div class="risk-fill risk-very-low" style="width:10%"></div></div>
+            <div class="trait-header"><span class="trait-name">Skin Elasticity</span><span class="risk-badge risk-very-low">Very Low</span></div>
+            <p class="trait-desc">Elastin and fibrillin gene variants are highly protective, conferring excellent skin rebound characteristics.</p>
+            <div class="trait-footer"><span class="trait-prs">PRS: 0.38</span><span class="trait-pop">9th percentile</span></div>
+          </div>
+          <div class="trait-card" data-risk="low" data-category="aesthetics" onclick="showTrait('reflectance')">
+            <div class="trait-risk-strip"><div class="risk-fill risk-low" style="width:28%"></div></div>
+            <div class="trait-header"><span class="trait-name">Skin Reflectance</span><span class="risk-badge risk-low">Low</span></div>
+            <p class="trait-desc">Melanin density and light-scattering variants indicate a luminous, high-reflectance baseline skin tone.</p>
+            <div class="trait-footer"><span class="trait-prs">PRS: 0.75</span><span class="trait-pop">29th percentile</span></div>
+          </div>
+          <div class="trait-card" data-risk="high" data-category="aesthetics" onclick="showTrait('sunburn')">
+            <div class="trait-risk-strip"><div class="risk-fill risk-high" style="width:76%"></div></div>
+            <div class="trait-header"><span class="trait-name">Sunburn Sensitivity</span><span class="risk-badge risk-high">High</span></div>
+            <p class="trait-desc">MC1R loss-of-function variants and minimal melanin buffering increase UV erythema response substantially.</p>
+            <div class="trait-footer"><span class="trait-prs">PRS: 1.96</span><span class="trait-pop">86th percentile</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MARKERS -->
+      <div id="view-markers" class="view">
+        <div class="view-intro">Skin health biomarkers reflect your genetic set points for key molecular factors governing barrier function and skin integrity.</div>
+        <div class="traits-grid" id="markers-grid">
+          <div class="trait-card trait-card-wide" data-risk="high" data-category="markers" onclick="showTrait('kallikrein')">
+            <div class="trait-risk-strip"><div class="risk-fill risk-high" style="width:70%"></div></div>
+            <div class="trait-header"><span class="trait-name">Kallikrein-7 Levels</span><span class="risk-badge risk-high">High</span></div>
+            <p class="trait-desc">Kallikrein-7 (KLK7) is a serine protease critical for skin desquamation. Elevated genetic levels can over-digest the corneal layer, leading to barrier compromise, sensitivity, and inflammatory skin conditions. Your variants in the KLK7 promoter region predict higher than average serine protease activity.</p>
+            <div class="trait-footer"><span class="trait-prs">PRS: 1.82</span><span class="trait-pop">83rd percentile</span></div>
+          </div>
+          <div class="trait-card trait-card-wide" data-risk="very-low" data-category="markers" onclick="showTrait('ceramide')">
+            <div class="trait-risk-strip"><div class="risk-fill risk-very-low" style="width:11%"></div></div>
+            <div class="trait-header"><span class="trait-name">Ceramide Levels</span><span class="risk-badge risk-very-low">Very Low</span></div>
+            <p class="trait-desc">Ceramides are essential lipids that form the skin's waterproof barrier. Higher genetic ceramide production is strongly protective against eczema, sensitivity, and transepidermal water loss. Your CERS2 and SMPD1 variant profile predicts excellent ceramide synthesis.</p>
+            <div class="trait-footer"><span class="trait-prs">PRS: 0.41</span><span class="trait-pop">10th percentile</span></div>
+          </div>
+        </div>
+        <div class="biomarker-chart-section">
+          <div class="card-title">Biomarker Genetic Set Points</div>
+          <canvas id="biomarkerChart" height="200"></canvas>
+        </div>
+      </div>
+
+      <!-- RECOMMENDATIONS -->
+      <div id="view-recommendations" class="view">
+        <div class="recs-layout">
+          <div class="rec-card rec-urgent">
+            <div class="rec-priority-label">🚨 Critical Priority</div>
+            <h3>Sun Protection Protocol</h3>
+            <p>Your Very High risk for Non-Melanoma Skin Cancer and Keratinocyte Cancer, combined with High Sunburn Sensitivity, makes comprehensive photoprotection non-negotiable.</p>
+            <ul class="rec-list">
+              <li>Apply SPF 50+ mineral sunscreen (zinc oxide) every morning, rain or shine</li>
+              <li>Reapply every 90 minutes during outdoor exposure</li>
+              <li>Wear UPF 50+ clothing for extended outdoor activity</li>
+              <li>Seek shade between 10am–4pm (peak UV index)</li>
+            </ul>
+            <div class="rec-genes">Related Variants: MC1R p.R160W · PTCH1 rs357564 · OCA2 rs1800407</div>
+          </div>
+          <div class="rec-card rec-high">
+            <div class="rec-priority-label">⚠️ High Priority</div>
+            <h3>Annual Dermatology Screening</h3>
+            <p>Individuals with your PRS profile for skin cancer have significantly higher lifetime incidence. Proactive monitoring dramatically improves outcomes.</p>
+            <ul class="rec-list">
+              <li>Schedule full-body skin exam annually with a board-certified dermatologist</li>
+              <li>Perform monthly self-examinations using the ABCDE method</li>
+              <li>Photograph and track any new or changing moles</li>
+              <li>Ask your dermatologist about dermoscopy screening tools</li>
+            </ul>
+            <div class="rec-genes">Related Variants: CDKN2A · TP53 rs1042522 · TERT rs2736098</div>
+          </div>
+          <div class="rec-card rec-medium">
+            <div class="rec-priority-label">📋 Moderate Priority</div>
+            <h3>Anti-Inflammatory Skincare Routine</h3>
+            <p>Elevated Psoriasis, Rosacea, and Allergic Disease risk call for a calming, barrier-supportive skincare approach to minimize trigger events.</p>
+            <ul class="rec-list">
+              <li>Use fragrance-free, hypoallergenic cleansers (pH 5.5–6.0)</li>
+              <li>Incorporate niacinamide 4–5% to reduce inflammation and reinforce barrier</li>
+              <li>Avoid SLS, parabens, and synthetic fragrances</li>
+              <li>Consider an elimination diet evaluation with your physician for food-triggered flares</li>
+            </ul>
+            <div class="rec-genes">Related Variants: HLA-C*06:02 · IL23R · CARD14</div>
+          </div>
+          <div class="rec-card rec-low">
+            <div class="rec-priority-label">✅ Maintenance</div>
+            <h3>Leverage Your Protective Advantages</h3>
+            <p>Your exceptional ceramide levels and skin elasticity represent genuine genetic gifts. Strategic routines can amplify these natural advantages.</p>
+            <ul class="rec-list">
+              <li>Use ceramide-containing moisturizers to reinforce your already-strong barrier</li>
+              <li>Collagen-stimulating treatments (retinoids, Vitamin C) will be especially effective given your elastin profile</li>
+              <li>Hydration is a natural strength — focus budget on UV protection instead</li>
+              <li>Maintain gut-skin axis health with probiotic support</li>
+            </ul>
+            <div class="rec-genes">Related Variants: CERS2 · FBN1 · AQP3</div>
+          </div>
+        </div>
+        <div class="skin-plan-cta">
+          <div>
+            <h3>Ready for Your Personalized Skin Plan?</h3>
+            <p>Our genomics team can build a fully customized skincare and medical monitoring protocol based on your unique genetic profile.</p>
+          </div>
+          <button class="btn-primary-lg">Improve My Skin Plan</button>
+        </div>
+      </div>
+
+    </div><!-- /views-container -->
+  </main>
+  </div><!-- /dashboard-body -->
+
+  <!-- MOBILE BOTTOM NAV -->
+ 
+
+</div>
+
+<!-- MODAL -->
+<div id="trait-modal" class="modal-overlay" onclick="closeModal(event)">
+  <div class="modal-box" onclick="event.stopPropagation()">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div id="modal-content"></div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<script src="/output/code/index.js">
+
+</script>
+
+
+</script>
+</body>
+</html>
